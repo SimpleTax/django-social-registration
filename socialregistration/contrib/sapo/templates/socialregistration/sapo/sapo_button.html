@@ -1,0 +1,11 @@
+<form class="connect-button" name="login" method="post" action="{% url socialregistration:sapo:redirect %}">
+{% csrf_token %}
+{% if next %}
+    <input type="hidden" name="next" value="{{ next }}" />
+{% endif %}
+{% if button %}
+<input type="image" onclick="this.form.submit();" src="{{ button }}" />
+{% else %}
+<input type="submit" value="Connect with SAPO" />
+{% endif %}
+</form>
